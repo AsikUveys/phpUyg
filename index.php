@@ -49,11 +49,34 @@
         )
     );
 
-    //İlgili kursa url oluşturma
-    $kurs1_url = str_replace([" ","ç","@","."],["-","c","","-"],strtolower($kurslar["1"]["baslik"]));
-    $kurs2_url = str_replace([" ","ç","@","."],["-","c","","-"],strtolower($kurslar["2"]["baslik"]));
-    $kurs3_url = str_replace([" ","ç","@","."],["-","c","","-"],strtolower($kurslar["3"]["baslik"]));
-    $kurs4_url = str_replace([" ","ç","@","."],["-","c","","-"],strtolower($kurslar["4"]["baslik"]));
+
+    function kursEkle(&$kurslar, string $baslik,string $altBaslik,string $resim,string $yayinTarihi,int $yorumSayisi=0,int $begeniSayisi=0,bool $onay=true){
+        $yeni_kurs[count($kurslar) + 1] = array(
+            "baslik" => $baslik,
+            "altBaslik" => $altBaslik,
+            "resim" => $resim,
+            "yayinTarihi" => $yayinTarihi,
+            "yorumSayisi" => $yorumSayisi,
+            "begeniSayisi" => $begeniSayisi,
+            "onay" => $onay
+        ); 
+
+        $kurslar = array_merge($kurslar, $yeni_kurs);
+    }
+
+    kursEkle($kurslar, "Git ve Github Kursu", "Git ve Github öğrenme.", "git.png", "23.10.2024");
+
+    function urlDuzenle($baslik){
+        return str_replace([" ","ç","@","."],["-","c","","-"],strtolower($baslik));
+    }
+
+    function kisaAciklama($altBaslik){
+        if (strlen($altBaslik) > 50 ){
+            return substr($altBaslik,0,50)."...";
+        }else{
+            return $altBaslik;
+        }  
+    }
 
 ?>
 
@@ -97,17 +120,12 @@
                                 <div class="col-8">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="<?php echo $kurs1_url; ?>">
+                                        <a href="<?php echo urlDuzenle($kurs["baslik"]); ?>">
                                             <?php echo $kurs["baslik"];?>
                                         </a>
                                     </h5>
                                     <p class="card-text">
-                                        <?php if(strlen($kurslar["1"]["altBaslik"]) > 50 ): ?>
-                                            <?php echo substr($kurslar["1"]["altBaslik"],0,50)."..."?>
-                                        <?php else:  ?>
-                                            <?php echo $kurs["altBaslik"]; ?>
-                                        <?php endif  ?>
-                                        
+                                        <?php echo kisaAciklama($kurs["altBaslik"]) ?>
                                     </p>
                                     <p>
                                         <?php if($kurs["begeniSayisi"] > 0):?>
