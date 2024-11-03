@@ -26,4 +26,10 @@
         }  
     }
 
+    function safe_html($data){
+        $data = trim($data);
+        $data = stripcslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 ?>

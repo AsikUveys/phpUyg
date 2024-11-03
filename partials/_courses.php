@@ -24,7 +24,7 @@
                         </span>
                     <?php endif ?>
     
-                    <?php if($kurslar["1"]["yorumSayisi"] > 0):?>
+                    <?php if($kurs["yorumSayisi"] > 0):?>
                         <span class="badge rounden-pill text-bg-danger">
                             Yorum: <?php echo $kurs["yorumSayisi"]; ?>
                         </span>
