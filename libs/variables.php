@@ -1,8 +1,12 @@
 <?php
 
     const title = "Popüler Kurslar";
-    const db_username = "asikuveys";
-    const db_password = "5353";
+
+    const db_user = array (
+        "username" => "asikuveys" ,
+        "password" => "5353" ,
+        "name" => "Aşık Üveys" 
+    );
 
     $kategoriler = array(
         array ("kategori_adi" => "Programlama", "aktif" => true), 
