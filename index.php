@@ -2,6 +2,13 @@
 
     require("libs/variables.php");
     require("libs/functions.php");
+
+    session_start();
+
+    if(isset($_SESSION["message"])){
+        echo "<div class='alert alert-success mb-0 text-center text-success'>".$_SESSION["message"]."</div>";
+        unset($_SESSION["message"]);
+    }
     
 ?>
 

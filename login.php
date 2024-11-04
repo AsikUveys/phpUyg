@@ -3,6 +3,8 @@
     require("libs/variables.php");
     require("libs/functions.php");
 
+    session_start();
+
     if(isset($_POST["login"])){
         $username = $_POST["username"];
         $password = $_POST["password"];
@@ -10,9 +12,10 @@
         if($username == db_user["username"] && $password == db_user["password"]){
             setcookie("auth[username]", db_user["username"], time() + (60 * 60* 24));
             setcookie("auth[name]", db_user["name"], time() + (60 * 60* 24));
+            $_SESSION["message"] = $username. " ile hesaba giriş yapıldı.";
             header("Location: index.php");
         }else{
-            echo "<div class='alert alert-danger mb-0 text-center'>Yanlış username ya da parola bilgisi.</div>";
+            echo "<div class='alert alert-danger mb-0 text-center text-danger'>Yanlış username ya da parola bilgisi.</div>";
         }
     }
     
