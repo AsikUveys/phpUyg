@@ -25,12 +25,23 @@
         </ul>
 
         <ul class="navbar-nav me-2">
-            <li class="nav-item">
-                <a href="login.php" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="register.php" class="nav-link active">Register</a>
-            </li>
+
+            <?php if(isset($_COOKIE["auth"])):  ?>
+                <li class="nav-item">
+                    <a href="logout.php" class="nav-link">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Hoşgeldiniz, <?php echo $_COOKIE["username"] ?></a>
+                </li>  
+            <?php else: ?>
+                <li class="nav-item">
+                    <a href="login.php" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.php" class="nav-link">Register</a>
+                </li>
+            <?php endif; ?>
+
         </ul>
 
         <form action="index.php" class="d-flex" method="$_GET">
