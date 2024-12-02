@@ -1,0 +1,16 @@
+{
+    "kategoriler": [
+        {"id": 1, "kategori_adi": "Programlama", "aktif": true},
+        {"id": 2, "kategori_adi": "Web Geliştrime", "aktif": false},
+        {"id": 3, "kategori_adi": "Veri Analizi", "aktif": false},
+        {"id": 4, "kategori_adi": "Office Uygulamaları", "aktif": false},
+        {"id": 5, "kategori_adi": "Mobil Uygulamalar", "aktif": false}
+    ],
+    
+    "kurslar": [
+        { "baslik": "Php Kursu","altBaslik": "Sıfırdan ileriye seviye Php ile web geliştirme kursu","resim": "php.png","yayinTarihi": "01.01.2024","yorumSayisi": 7,"begeniSayisi": 10,"onay": true},
+        { "baslik": "Python Kursu","altBaslik": "Sıfırdan ileriye seviye  Python Kursu kursu","resim": "python.png","yayinTarihi": "03.03.2024","yorumSayisi": 5,"begeniSayisi": 15,"onay": true},
+        { "baslik": "Node.js Kursu","altBaslik": "Sıfırdan ileriye seviye  Node.js kursu","resim": "node.png","yayinTarihi": "05.05.2024","yorumSayisi": 0,"begeniSayisi": 10,"onay": true},
+        { "baslik": "React Kursu","altBaslik": "Sıfırdan ileriye seviye  React kursu","resim": "react.png","yayinTarihi": "07.07.2024","yorumSayisi": 6,"begeniSayisi": 5,"onay": true}
+    ]
+}
