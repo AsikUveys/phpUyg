@@ -20,7 +20,10 @@
                 <a href="index.php" class="nav-link">Anasayfa</a>
             </li>
             <li class="nav-item">
-                <a href="create.php" class="nav-link ">Kurs Ekle</a>
+                <a href="admin-categories.php" class="nav-link ">Admin Categories</a>
+            </li>
+            <li class="nav-item">
+                <a href="admin-courses.php" class="nav-link ">Admin Courses</a>
             </li>
         </ul>
 
